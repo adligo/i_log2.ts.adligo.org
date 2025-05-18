@@ -22,6 +22,24 @@ export const MESSAGE = '<message/>';
 export const ROOT = 'ROOT';
 
 /**
+ * This interface is just a wrapper around the regular old Javascript console instance, mostly for unit testing
+ * <a href="https://developer.mozilla.org/en-US/docs/Web/API/console">Mozilla Docs</a>
+ * Note it should only be used when you want to interact with the user directly,
+ * logging to a I_Log is preferred because it formatts your log message including 
+ * the logName which by convention includes the project name in referse domain order 
+ * (a conventoin from Java), and allows external configuration of the log level.
+ * Finally note I may not have gotten all of the typescript overload signatures for these 
+ * methods, feel free to add. 
+ */
+export interface I_Console {
+  debug(...data: any[]): void;
+  error(...data: any[]): void;
+  info(...data: any[]): void;
+  trace(...data: any[]): void;
+  warn(...data: any[]): void;
+}
+
+/**
  * This interface allows concurrent logging from different parts of the system
  * to use the same I_Log, so that the disparate concurrent log message are less
  * jumbly / out of order in the console.
@@ -38,23 +56,24 @@ export interface I_LogSegment {
   flush(): void;
 }
 export interface I_Log {
-  debug(message : string, logSegment?: I_LogSegment ): void
-  error(message : string, logSegment?: I_LogSegment): void
-  getFormat(): string
-  getLevel(): LogLevel
-  getName(): string
-  info(message : string, logSegment?: I_LogSegment): void
-  isDebug(): boolean
-  isError(): boolean
-  isInfo(): boolean
-  isTrace(): boolean
-  isWarn(): boolean
-  trace(message : string, logSegment?: I_LogSegment): void
-  warn(message : string, logSegment?: I_LogSegment): void
+  debug(message : string | I_LogSegment ): void;
+  error(message : string | I_LogSegment): void;
+  getFormat(): string;
+  getLevel(): LogLevel;
+  getName(): string;
+  info(message : string | I_LogSegment): void;
+  isDebug(): boolean;
+  isError(): boolean;
+  isInfo(): boolean;
+  isTrace(): boolean;
+  isWarn(): boolean;
+  trace(message : string | I_LogSegment): void;
+  warn(message : string | I_LogSegment): void;
 }
 
   
 export interface I_LogCtx {
+  getConsole(): I_Console;
   getLog(logName: string): I_Log;
 }
 
