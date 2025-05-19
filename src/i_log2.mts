@@ -17,7 +17,7 @@
 export const DEFAULT_FORMAT = '<logName/> <level/>: <message/>';
 export const INVALID_LOG_FORMAT = 'Invalid log format ';
 export const LEVEL = '<level/>';
-export const LOGNAME = '<logname/>';
+export const LOGNAME = '<logName/>';
 export const MESSAGE = '<message/>';
 export const ROOT = 'ROOT';
 
@@ -53,7 +53,7 @@ export interface I_LogSegment {
   /**
    * write the buffered group of log messages to the console, file, http stream etc.
    */
-  flush(): void;
+  flush(): string;
 }
 export interface I_Log {
   debug(message : string | I_LogSegment ): void;
@@ -78,8 +78,9 @@ export interface I_LogCtx {
 }
 
 export interface I_LogConfig {
-  getLevel(logName: string): LogLevel | undefined;
+  getLevel(logName: string): LogLevel;
   getFormat(): string;
+  update(ctx: I_LogCtx): void;
 }
 
 export enum LogLevel {
