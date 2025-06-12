@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "experimentalDecorators": true,
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noImplicitAny": true,
+    "outDir": "./dist",
+    "rootDirs": ["./src"],
+    "preserveConstEnums": true,
+    "sourceMap": true
+  },
+  "include": [
+    "src/**/*.mts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

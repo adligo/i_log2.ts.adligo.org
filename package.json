@@ -1,0 +1,39 @@
+{
+  "author": "Scott Morgan",
+  "bin": {
+    "i_log2.mjs": "./dist/i_log2.mjs",
+    "i_log2.mts": "./dist/i_log2.mts",
+  },
+  "bugs": {
+    "url": "https://github.com/adligo/i_log2.ts.adligo.org/issues"
+  },
+  "description": "This project contains the TypeScript interfaces for log2.ts.adligo.org ",
+  "dependencies": {
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.12"
+  },
+  "homepage": "https://github.com/adligo/i_log2.ts.adligo.org",
+  "keywords": [
+    "log4j",
+    "i_log",
+    "i_log2",
+    "fab",
+    "javascript",
+    "typescript"
+  ],
+  "license": "Apache-2.0",
+  "name": "@ts.adligo.org/i_log2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adligo/i_log2.ts.adligo.org.git"
+  },
+  "scripts": {
+    "build": "tsc && slink -p",
+    "tsc": "tsc",
+    "runCmd": "npx tsx src/log2-junk.ts"
+  },
+  "type": "module",
+  "version": "0.0.2"
+}
