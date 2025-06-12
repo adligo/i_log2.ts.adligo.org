@@ -2,7 +2,7 @@
   "author": "Scott Morgan",
   "bin": {
     "i_log2.mjs": "./dist/i_log2.mjs",
-    "i_log2.mts": "./dist/i_log2.mts"
+    "i_log2.mts": "./src/i_log2.mts"
   },
   "bugs": {
     "url": "https://github.com/adligo/i_log2.ts.adligo.org/issues"
