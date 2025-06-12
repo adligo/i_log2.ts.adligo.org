@@ -29,6 +29,12 @@
     "type": "git",
     "url": "git+https://github.com/adligo/i_log2.ts.adligo.org.git"
   },
+  "sharedNodeModuleProjectSLinkEnvVar": [
+    "LOG2_NODE_MODULE_SLINK"
+  ],
+  "sharedNodeModuleProjectSLinks": [
+    "fab_group_deps.ts.adligo.org"
+  ],
   "scripts": {
     "build": "tsc && slink -p",
     "tsc": "tsc",

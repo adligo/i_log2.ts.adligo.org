@@ -24,3 +24,10 @@
 hs_err_pid*
 replay_pid*
 /bin/
+/dist/
+/dist
+/dist/*
+/node_modules/
+/node_modules
+/node_modules/*
+
